@@ -6,7 +6,10 @@
 import scrapy
 
 
-class ParserItem(scrapy.Item):
+class AnimeUpdate(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    link = scrapy.Field()
+    image = scrapy.Field()
+    name_ru =  scrapy.Field()
+    update_text = scrapy.Field()
+    date_time = scrapy.Field()
