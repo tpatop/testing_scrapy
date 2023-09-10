@@ -5,7 +5,6 @@ from scrapy.spiders import CrawlSpider
 
 class ProjectSpider(CrawlSpider):
     name = "project"
-    # allowed_domains = ["yummyani.me"]
 
     def start_requests(self):
         urls = ['https://yummyani.me/catalog/anime-updates/']
@@ -13,10 +12,9 @@ class ProjectSpider(CrawlSpider):
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
 
-
     def parse(self, response):
         item = AnimeUpdate()
-        updates = response.xpath('//li[@class="one-video-update"]')
+        updates = response.xpath('//li[@class="one-video-update materiable"]')
         for upd in updates:
             link = upd.xpath('./a/@href').get()
             image = upd.xpath('./a/img/@src').get()

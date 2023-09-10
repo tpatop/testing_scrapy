@@ -10,6 +10,6 @@ class AnimeUpdate(scrapy.Item):
     # define the fields for your item here like:
     link = scrapy.Field()
     image = scrapy.Field()
-    name_ru =  scrapy.Field()
+    name_ru = scrapy.Field()
     update_text = scrapy.Field()
     date_time = scrapy.Field()
