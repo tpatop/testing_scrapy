@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = "parser.spiders"
 # USER_AGENT = "parser (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False  # оставляю True, т.к. сайт не блокирует ботов
+ROBOTSTXT_OBEY = False  # True - обращать на robots.txt, False - игнорировать
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -62,9 +62,9 @@ DOWNLOAD_DELAY = 1
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    "parser.pipelines.ParserPipeline": 300,
-# }
+ITEM_PIPELINES = {
+   'parser.pipelines.SqlitePipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -91,5 +91,5 @@ DOWNLOAD_DELAY = 1
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
-FEED_FORMAT = "json"  # настройка необходимого формата сохранения данных (json, csv, xml, json Lines)
-FEED_URI = "responce.json"  # файл для загрузки результатов парсинга (для всех парсеров)
+# FEED_FORMAT = "json"  # настройка необходимого формата сохранения данных (json, csv, xml, json Lines)
+# FEED_URI = "responce.json"  # файл для загрузки результатов парсинга (для всех парсеров)
