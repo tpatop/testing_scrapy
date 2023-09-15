@@ -12,5 +12,5 @@ class AnimeUpdate(scrapy.Item):
     hash_link = scrapy.Field()
     image = scrapy.Field()
     name_ru = scrapy.Field()
-    update_text = scrapy.Field()
-    date_time = scrapy.Field()
+    episode = scrapy.Field()
+    translate = scrapy.Field()
