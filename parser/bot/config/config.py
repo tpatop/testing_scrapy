@@ -1,0 +1,20 @@
+from dataclasses import dataclass
+from environs import Env  # для считывания переменных окружения
+
+
+@dataclass
+class TgBot:
+    token: str  # Токен доступа к боту
+
+
+@dataclass
+class Config:
+    tg_bot: TgBot
+
+
+def load_config(path: str | None):
+    env = Env()
+    env.read_env(path)
+
+    return Config(
+        tg_bot=TgBot(token=env('ANIME_BOT_TOKEN')))
