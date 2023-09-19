@@ -31,7 +31,7 @@ class ProjectSpider(CrawlSpider):
             # date_time = upd.xpath('./a//local-time/@data-time').get()
 
             item['link'] = link
-            item['hash_link'] = hash_text(link)
+            item['hash_id'] = hash_text(link + translate)
             item['image'] = image
             item['name_ru'] = name_ru
             item['episode'] = episode

@@ -30,7 +30,7 @@ class SqlitePipeline:
     def process_item(self, item, spider):
         data = Update(
             name_ru=item['name_ru'],
-            hash_link=item['hash_link'],
+            hash_id=item['hash_id'],
             link=item['link'],
             image=item['image'],
             episode=item['episode'],

@@ -21,4 +21,4 @@ def run_crawler():
 if __name__ == '__main__':
     while True:
         run_crawler()
-        time.sleep(10)  # время ожидания между вызовами
+        time.sleep(900)  # время ожидания между вызовами в секундах

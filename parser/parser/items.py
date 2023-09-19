@@ -9,7 +9,7 @@ import scrapy
 class AnimeUpdate(scrapy.Item):
     # define the fields for your item here like:
     link = scrapy.Field()
-    hash_link = scrapy.Field()
+    hash_id = scrapy.Field()
     image = scrapy.Field()
     name_ru = scrapy.Field()
     episode = scrapy.Field()
